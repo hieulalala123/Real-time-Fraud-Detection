@@ -1,5 +1,0 @@
-{
-  "packageManager": "python",
-  "packageName": "marimo-jupyter-extension",
-  "uninstallInstructions": "pip uninstall marimo-jupyter-extension"
-}
