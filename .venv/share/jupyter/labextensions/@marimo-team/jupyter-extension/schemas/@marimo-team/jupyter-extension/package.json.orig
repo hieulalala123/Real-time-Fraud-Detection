@@ -1,0 +1,80 @@
+{
+  "name": "@marimo-team/jupyter-extension",
+  "version": "0.1.0",
+  "description": "JupyterLab extension for Marimo integration",
+  "keywords": ["jupyter", "jupyterlab", "jupyterlab-extension", "marimo"],
+  "homepage": "https://github.com/marimo-team/marimo-jupyter-extension",
+  "bugs": {
+    "url": "https://github.com/marimo-team/marimo-jupyter-extension/issues"
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Marimo Team"
+  },
+  "files": [
+    "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
+    "style/**/*.{css,js,eot,gif,html,jpg,json,png,svg,woff2,ttf}"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marimo-team/marimo-jupyter-extension.git"
+  },
+  "scripts": {
+    "build": "npm run build:lib && npm run build:labextension:dev",
+    "build:prod": "npm run clean && npm run build:lib:prod && npm run build:labextension",
+    "build:labextension": "scripts/jupyter labextension build .",
+    "build:labextension:dev": "scripts/jupyter labextension build --development True .",
+    "build:lib": "tsc --sourceMap",
+    "build:lib:prod": "tsc",
+    "clean": "npm run clean:lib && npm run clean:labextension",
+    "clean:lib": "rimraf lib tsconfig.tsbuildinfo",
+    "clean:labextension": "rimraf ../marimo_jupyter_extension/labextension",
+    "watch": "run-p watch:src watch:labextension",
+    "watch:src": "tsc -w --sourceMap",
+    "watch:labextension": "scripts/jupyter labextension watch .",
+    "lint": "run-s2 lint:biome lint:eslint",
+    "lint:biome": "biome lint --config-path .. --diagnostic-level=warn --write .",
+    "lint:eslint": "eslint src --fix",
+    "lint:check": "biome lint --config-path .. --diagnostic-level=warn . && eslint src",
+    "format": "biome format --config-path .. --write .",
+    "format:check": "biome format --config-path .. .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@jupyterlab/application": "^4.5.6",
+    "@jupyterlab/apputils": "^4.6.6",
+    "@jupyterlab/coreutils": "^6.5.6",
+    "@jupyterlab/docregistry": "^4.5.6",
+    "@jupyterlab/filebrowser": "^4.5.6",
+    "@jupyterlab/launcher": "^4.5.6",
+    "@jupyterlab/services": "^7.5.6",
+    "@jupyterlab/ui-components": "^4.5.6",
+    "@lumino/coreutils": "^2.2.2",
+    "@lumino/widgets": "^2.7.5"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@jupyterlab/builder": "4.5.7",
+    "@types/node": "24.12.2",
+    "@typescript-eslint/eslint-plugin": "8.58.2",
+    "@typescript-eslint/parser": "8.58.2",
+    "eslint": "8.57.1",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-react": "7.37.5",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "npm-run-all": "4.1.5",
+    "npm-run-all2": "8.0.4",
+    "rimraf": "6.1.3",
+    "typescript": "5.9.3",
+    "vitest": "4.1.5"
+  },
+  "jupyterlab": {
+    "extension": true,
+    "outputDir": "../marimo_jupyter_extension/labextension",
+    "schemaDir": "schema"
+  }
+}

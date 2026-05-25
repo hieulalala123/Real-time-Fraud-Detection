@@ -1,0 +1,96 @@
+Metadata-Version: 2.4
+Name: jupyter_ai
+Version: 3.0.0
+Summary: A set of extensions providing agentic AI in JupyterLab
+Project-URL: Documentation, https://jupyter-ai.readthedocs.io/en/v3/
+Project-URL: Source, https://github.com/jupyterlab/jupyter-ai
+Project-URL: Tracker, https://github.com/jupyterlab/jupyter-ai/issues
+Author-email: Project Jupyter <jupyter@googlegroups.com>
+License: BSD 3-Clause License
+        
+        Copyright (c) 2023, author_a
+        All rights reserved.
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+        
+        1. Redistributions of source code must retain the above copyright notice, this
+           list of conditions and the following disclaimer.
+        
+        2. Redistributions in binary form must reproduce the above copyright notice,
+           this list of conditions and the following disclaimer in the documentation
+           and/or other materials provided with the distribution.
+        
+        3. Neither the name of the copyright holder nor the names of its
+           contributors may be used to endorse or promote products derived from
+           this software without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+        AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+        CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+        OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+License-File: LICENSE
+Keywords: jupyter,jupyter-ai,jupyterlab,jupyterlab-extension
+Classifier: Framework :: Jupyter
+Classifier: Framework :: Jupyter :: JupyterLab
+Classifier: Framework :: Jupyter :: JupyterLab :: 4
+Classifier: Framework :: Jupyter :: JupyterLab :: Extensions
+Classifier: Framework :: Jupyter :: JupyterLab :: Extensions :: Prebuilt
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.9
+Requires-Dist: jupyter-ai-acp-client>=0.1.0
+Requires-Dist: jupyter-ai-chat-commands>=0.0.4
+Requires-Dist: jupyter-ai-persona-manager>=0.0.8
+Requires-Dist: jupyter-ai-router>=0.0.3
+Requires-Dist: jupyter-ai-tools>=0.4.1
+Requires-Dist: jupyter-server-documents>=0.1.2
+Requires-Dist: jupyter-server-mcp>=0.1.2
+Requires-Dist: jupyterlab-chat>=0.21.0
+Requires-Dist: jupyterlab-commands-toolkit>=0.1.4
+Requires-Dist: jupyterlab-notebook-awareness>=0.2.0
+Provides-Extra: jupyternaut
+Requires-Dist: jupyter-ai-jupyternaut>=0.0.11; extra == 'jupyternaut'
+Requires-Dist: jupyter-ai-litellm>=0.0.2; extra == 'jupyternaut'
+Provides-Extra: magics
+Requires-Dist: jupyter-ai-litellm>=0.0.2; extra == 'magics'
+Requires-Dist: jupyter-ai-magic-commands>=0.0.3; extra == 'magics'
+Description-Content-Type: text/markdown
+
+<p align="center">
+  <img src="docs/source/_static/jupyter_logo.png" alt="Jupyter logo" width="120">
+</p>
+
+<h1 align="center">Jupyter AI</h1>
+
+<p align="center"><i>An open source extension that connects AI agents to computational notebooks in JupyterLab.</i></p>
+
+Jupyter AI brings agentic AI to JupyterLab. It provides a native chat UI where you can collaborate with frontier AI agents — including Claude, Codex, Gemini, Goose, Kiro, and OpenCode — all integrated through the [Agent Client Protocol (ACP)](https://agentclientprotocol.com). Agents are automatically detected when their dependencies are installed, so getting started is as simple as installing Jupyter AI and the agent of your choice.
+
+Agents in Jupyter AI can read and write files, run terminal commands, and interact with notebooks through a built-in [Jupyter MCP server](https://github.com/jupyter-ai-contrib/jupyter-server-mcp). A permission system gives you guardrails over agent actions — agents request approval before writing files or executing commands. You can also create multiple concurrent chats, drag and drop files or notebook cells as context, and collaborate in real time with other users connected to the same server.
+
+Jupyter AI is designed to be flexible and extensible. You can add custom [MCP servers](https://modelcontextprotocol.io) to give agents access to domain-specific tools, resources, and prompts. Developers can build and register their own AI personas using the entry points API. By building on open standards like ACP and MCP, Jupyter AI avoids vendor lock-in and gives you access to the full ecosystem of compatible agents and tools.
+
+## Quick Links
+
+- [Getting Started](https://jupyter-ai.readthedocs.io/en/latest/getting-started.html) — installation, agent setup, and first chat
+- [User Guide](https://jupyter-ai.readthedocs.io/en/latest/users/index.html) — chat features, notebook tools, and custom MCP servers
+- [Contributor Guide](https://jupyter-ai.readthedocs.io/en/latest/contributors/index.html) — how to contribute to Jupyter AI
+- [Developer Guide](https://jupyter-ai.readthedocs.io/en/latest/developers/index.html) — building custom agents and MCP servers
+- [Troubleshooting](https://jupyter-ai.readthedocs.io/en/latest/users/troubleshooting.html) — common issues and solutions
+
+## Governance
+
+Jupyter AI is currently under incubation as part of the JupyterLab organization.

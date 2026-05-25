@@ -1,0 +1,5 @@
+[jupyter_server_extension_points]
+marimo_jupyter_extension = marimo_jupyter_extension.handlers
+
+[jupyter_serverproxy_servers]
+marimo = marimo_jupyter_extension:setup_marimoserver
